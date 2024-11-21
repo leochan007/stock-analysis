@@ -71,7 +71,7 @@ def celue_save(file_list, HS300_信号, tqdm_position=None):
             df.loc[start_date:end_date, 'celue_buy'] = celue2
             df.loc[start_date:end_date, 'celue_sell'] = celue_sell
             df.reset_index(drop=True, inplace=True)
-            df.to_csv(ucfg.tdx['csv_lday'] + os.sep + stockcode + '.csv', index=False, encoding='gbk')
+            df.to_csv(ucfg.tdx['csv_lday_qfq'] + os.sep + stockcode + '.csv', index=False, encoding='gbk')
             df.to_pickle(ucfg.tdx['pickle'] + os.sep + stockcode + ".pkl")
         lefttime_tick = int((time.time() - starttime_tick) / (file_list.index(stockcode) + 1)
                             * (len(file_list) - (file_list.index(stockcode) + 1)))
